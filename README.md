@@ -9,6 +9,19 @@ There are a few defined run scripts, here's a list of them with a description of
 - `cover`: Runs tests and collects coverage.
 - `lint`: Lints + formats the code.
 
+**Requests**
+
+```
+get     books?limit=?&skip=?&order=id:asc,description:asc&row=value for find
+        limit - is limit find, max 500, nefault 10
+        skip - is number of skiped rows, default 0
+        order can be groups by ',' delimeter default 'id:asc'
+        row - it's row for where, value it's it value
+post    books
+        title,description,image,date,autor params need
+patch   books/:id  for update
+```
+
 **For npm:**
 
 ```bash
