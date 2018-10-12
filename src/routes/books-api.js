@@ -1,7 +1,8 @@
 import { createController } from 'awilix-koa'
 
 const api = booksService => ({
-  findBooks: async ctx => ctx.ok(await booksService.find(ctx.query)),
+  findBooks: async ctx =>
+    ctx.ok(await booksService.find(ctx.query)),
   createBook: async ctx =>
     ctx.created(await booksService.create(ctx.request.body)),
   updateBook: async ctx =>

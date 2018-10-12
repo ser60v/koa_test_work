@@ -70,9 +70,7 @@ export default class testService {
     }
 
     const books = await Books.find( params );
-    if( books === 0 ){
-      return { error: 'invalid request' };
-    }
+    if( books === 0 ) return { error: 'invalid request' };
 
     return books
   }
@@ -95,12 +93,9 @@ export default class testService {
     const id = await Books.createBook( newBook );
     const books = await Books.getOne( id );
 
-    if( books.length ){
-      return books[0];
-    } else {
-      return { error: 'invalid data' };
-    }
+    if( !books.length ) return { error: 'invalid data' };
 
+    return books[0];
 
   }
 
@@ -114,11 +109,10 @@ export default class testService {
 
     const books = await Books.getOne( id );
 
-    if( books.length ){
-      return books[0];
-    } else {
-      return { error: 'invalid id' };
-    }
+    if( !books.length )return { error: 'invalid id' };
+
+    return books[0];
+
   }
 
 }
